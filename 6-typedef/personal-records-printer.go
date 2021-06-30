@@ -1,7 +1,6 @@
 package main
 
 import (
-	"encoding/json"
 	"fmt"
 )
 
@@ -11,6 +10,10 @@ type PersonRecord struct {
 	Age  int    `json:"age"`
 }
 
+func (record *PersonRecord) requestPrint() {
+	fmt.Println("Person:", record)
+}
+
 func main() {
 	people := []PersonRecord{
 		{1, "John Adam", 21},
@@ -18,7 +21,7 @@ func main() {
 		{3, "Canoe Boat", 48},
 	}
 
-	// declare with type clarify is ok but no need (PersonRecord)
+	// declare with type is ok but no need (PersonRecord)
 	// people := []PersonRecord{
 	// 	PersonRecord{1, "John Adam", 21},
 	// 	PersonRecord{2, "Wick Laugh", 29},
@@ -27,12 +30,6 @@ func main() {
 
 	fmt.Println("Collected person infos:", people)
 
-	// make pointer to first element
-	var john *PersonRecord = &people[0]
-	john.Name = "John Beckam"
+	people[0].requestPrint()
 
-	fmt.Println("Collected person infos after changes:", people)
-
-	jsonData, _ := json.Marshal(people)
-	fmt.Println("Collected person infos in json:", string(jsonData))
 }

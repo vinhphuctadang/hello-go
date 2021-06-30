@@ -12,11 +12,12 @@ func sum(n int) {
 	for i := 0; i < n; i++ {
 		result += i
 	}
+	time.Sleep(100 * time.Millisecond)
 	fmt.Printf("Done computing sum of %d integers, result = %d\n", n, result)
 }
 
 func main() {
 	go sum(100000000)
-	time.Sleep(100 * time.Millisecond)
+	sum(1000)
 	fmt.Printf("Finished")
 }
