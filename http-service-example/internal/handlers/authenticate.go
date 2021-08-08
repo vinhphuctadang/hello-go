@@ -10,8 +10,8 @@ import (
 )
 
 type AuthenticateInput struct {
-	Username string `form:"username",json:"username"`
-	Password string `form:"password",json:"username"`
+	Username string `form:"username"`
+	Password string `form:"password"`
 }
 
 type AuthenticateOutput struct {
