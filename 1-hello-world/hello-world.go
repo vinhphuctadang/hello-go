@@ -2,10 +2,8 @@
 package main
 
 // import
-import (
-	"fmt"
-	"mymath/mymath"
-)
+import "fmt"
+import "mymath/mymath"
 
 func main() {
 	fmt.Println("Hello world, sum of 10 + 15 = ", mymath.Add(10, 15))

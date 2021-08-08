@@ -1,6 +1,7 @@
 package main
 
 import "github.com/gin-gonic/gin"
+import "handlers"
 
 func ping(c *gin.Context) {
 	c.JSON(200, gin.H{
@@ -27,9 +28,11 @@ func getPerson(c *gin.Context) {
 }
 
 func main() {
-	r := gin.Default() //gin.Default() creates a Gin router with default middleware: logger and recovery middleware.
+	var r = gin.Default() //gin.Default() creates a Gin router with default middleware: logger and recovery middleware.
+
 	r.GET("/ping", ping)
 	r.GET("/hello", hello)
 	r.GET("/person/:id", getPerson)
 	r.Run(":3000") // serve on port 3000
+
 }
