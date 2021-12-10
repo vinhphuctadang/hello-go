@@ -1,6 +1,7 @@
 package main
 
-// #include "sum_array.c"
+//#include "sum_array.h"
+//#cgo LDFLAGS: sum_array.o
 import "C"
 import "fmt"
 
